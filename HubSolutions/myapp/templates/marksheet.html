@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+<br>
+<br>
+<br>
+<br>
+<form method="POST">
+    {%csrf_token%}
+<label for="sub1">subject1 marks</label>
+<input type="text" name='sub1' class='form-control' placeholder="Enter marks for subject 1" title="Subject 1 Marks">
+<br>
+<br>
+<label for="sub2">subject 2 marks</label>
+<input type="text" name='sub2' class='form-control' placeholder="Enter marks for subject 2" title="Subject 2 Marks">
+<br>
+<br>
+<label for="sub3">subject 3 marks</label>
+<input type="text" name='sub3' class='form-control' placeholder="Enter marks for subject 3" title="Subject 3 Marks">
+<br>
+<br>
+<label for="sub4">subject 4 marks</label>
+<input type="text" name='sub4' class='form-control' placeholder="Enter marks for subject 4" title="Subject 4 Marks">
+<br>
+<br>
+<label for="sub5">subject 5 marks</label>
+<input type="text" name='sub5' class='form-control' placeholder="Enter marks for subject 5" title="Subject 5 Marks">
+<br>
+<br>
+<button type='submit'>calculate</button>
+<br><br><br>
+<label >Total</label>
+<br> <input type="text" value="{{total}}" title="Total Marks" placeholder="Total Marks"><br><br>
+<label >percentage</label>
+<br> <input type="text" value="{{percentage}}" title="Percentage" placeholder="Percentage">
+<br><br>
+</form>
+
+{% endblock content%}

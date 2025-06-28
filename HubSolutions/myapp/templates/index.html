@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #bf4f4f;
+        margin: 0;
+        padding: 20px;
+    }
+    h1 {
+        color: #c71157;
+    }
+    p {
+        line-height: 1.6;
+    }
+    footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 0.8em;
+        color: #100e0e;
+    }
+    footer p {
+        margin: 0;
+    }
+    footer p a {
+        color: #e82985;
+        text-decoration: none;
+    }
+    footer p a:hover {
+        text-decoration: underline;
+        color: #1ad410;
+
+    }
+    footer p a:visited {
+        color: #2980b9;
+    }
+    footer p a:active {
+        color: #1abc9c;
+    }
+    footer p a:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+    }
+script {
+        display: none; /* Hide script tag */
+        /* You can add any additional styles for the script tag here */
+    
+    }
+
+</style>
+    <title>{{ title }}</title>
+
+</head>
+<body>
+    <!-- <h1>Welcome to HubSolutions</h1>
+    <p>We are glad to have you here!</p>
+    <p>HubSolutions is a platform designed to help you manage your projects efficiently.</p>
+    <p>Feel free to explore and make the most of our services.</p>
+    <div>
+        <p>{{ bdata }} {{ clist }}</p>
+    </div>
+    <footer>
+        <p>&copy; 2023 HubSolutions. All rights reserved.</p>
+    </footer> -->
+
+    <div>
+        {% for n in clist  %}
+        <!-- <h1>{{ n }}</h1> -->
+         <!-- <h1>{{forloop.counter}} {{ n }}</h1>  counter start with 1 -->
+         <!-- <h1>{{forloop.counter0}} {{ n }}</h1> counter start with 0 -->
+            <!-- <h1>{{ forloop.revcounter }} {{ n }}</h1> counter reverse with 1 -->
+            <!-- <h1>{{ forloop.revcounter0 }} {{ n }}</h1> counter reverse with 0 -->
+            <!-- <h1>{{ forloop.first }} {{ n }}</h1> counter first with true -->
+             <!-- <h1>{{ forloop.last }} {{ n }}</h1> counter last with true -->
+                  <h1>{{ forloop.counter }} {{ n }}</h1>
+        {% endfor %}
+
+
+                  <br>
+                  <table border="1" cellpadding="10">
+                    <tr>
+
+                        <th>name</th>
+                        <th>age</th>
+                        <th>course</th>
+
+                        {% for i in Student_Details %}
+                            <tr>
+                                <td>{{ i.name }}</td>
+                                <td>{{ i.age }}</td>
+                                <td>{{ i.course }}</td>
+                                <td>{{ i.group }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </tr>
+                  </table>
+        
+    </div>
+{% if numbers|length > 0 %}
+    {% for n in numbers %}
+       {% if n > 20 %}
+           <div>{{ n }}</div>
+       {% endif %}
+    {% endfor %}
+    {% else %}
+        <div>No numbers greater than 20 found.</div>
+    {% endif %}
+    
+</body>
+</html>

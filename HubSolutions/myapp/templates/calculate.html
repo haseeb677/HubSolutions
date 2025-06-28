@@ -1,0 +1,47 @@
+{% extends "header.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="text-align: center; color: black; font-weight: bold; font-family: monospace;">CALCULATOR</h1>
+
+<form method="POST">
+    {% csrf_token %}
+   <label for="num1"> value 1</label>
+   <input type="text" name="num1" class='form-control' placeholder="Enter first value" title="Enter first value">
+  <br>
+   <label for="num2"> value 1</label>
+   <input type="text" name="num2" class='form-control' placeholder="Enter second value" title="Enter second value">
+   <button type="submit"> calculate</button>
+  
+   <br>
+   <br>
+   <label>additon:</label>
+   <input type="text" value={{add}} title="Addition result" placeholder="Addition result">
+   <br>
+   <br> 
+    <label>subtraction:</label>
+   <input type="text" value={{sub}} title="Subtraction result" placeholder="Subtraction result">
+   <br>
+   <br>
+   <label >multiplication:</label>
+   <input type="text" value={{mul}} title="Multiplication result" placeholder="Multiplication result">
+   <br>
+   <br>
+   <label >division</label>
+   <input type="text" value={{div}} title="Division result" placeholder="Division result">
+   <button type="reset">reset all values </button>
+   <br><br>
+</form>
+</div>
+{% endblock %}
+
+
+
+
+
+
+{% include "footer.html" %}
