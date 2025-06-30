@@ -46,3 +46,15 @@ def footer(request):
     return render(request, "footer.html")  # Assuming you have a footer.html template in your templates directory
 def marksheet(request):
     return render(request,"marksheet.html")
+
+
+def submitform(request):
+    output = None
+    try:
+        num1 = int(request.POST['num1'])
+        num2 = int(request.POST['num2'])
+        output = num1 + num2
+    except (TypeError, ValueError):
+        output = None  # or set error message if needed
+
+    return render(request, 'userform.html', {'output': output})

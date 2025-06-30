@@ -33,4 +33,6 @@ urlpatterns = [
     path('header/', views.header),
     path('footer/', views.footer),
     path('marksheet/', views.marksheet),
+    path('submitform/', views.submitform),
 ] + static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, 'static'))
+
